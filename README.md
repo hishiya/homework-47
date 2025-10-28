@@ -1,16 +1,69 @@
-# React + Vite
+# Проєкт "React Forms: Formik та React Hook Form"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Це навчальний проєкт, що демонструє реалізацію двох незалежних форм реєстрації з валідацією, згідно з тестовим завданням.
 
-Currently, two official plugins are available:
+Проєкт містить дві окремі форми:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  **Основна форма (на Formik + Yup):** Форма загальної реєстрації (Ім'я, Email, Пароль).
+2.  **Додаткова форма (на React Hook Form):** Форма для введення додаткових даних (Номер телефону, Дата народження) зі збереженням даних у `localStorage`.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##
 
-## Expanding the ESLint configuration
+* **Дві бібліотеки:** Демонстрація двох найпопулярніших підходів до керування формами в React.
+* **Валідація "на льоту"** для обох форм.
+* **Formik + Yup:**
+    * Використання `Formik` для керування станом, подіями та відправкою.
+    * Використання `Yup` для створення комплексної схеми валідації (перевірка на коректність `email`, складність пароля та обов'язкові поля).
+* **React Hook Form (RHF):**
+    * Використання вбудованих інструментів RHF для валідації без `Yup`.
+    * **Кастомна валідація:** Реалізовано перевірку номера телефону на відповідність українським форматам (наприклад, `+380...` або `0...`).
+    * **Валідація дати:** Перевірка, що дата народження не може бути обрана у майбутньому.
+* **Збереження в `localStorage`:** Дані з форми `React Hook Form` після успішної валідації зберігаються у локальному сховищі браузера.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+Стек технологій
+
+* **React**
+* **Vite** (для збірки та розробки)
+* **Formik** (для керування основною формою)
+* **Yup** (для валідації основної форми)
+* **React Hook Form** (для керування додатковою формою)
+
+---
+
+Встановлення та запуск
+
+1.  **Клонуйте репозиторій:**
+    ```bash
+    # Замініть [URL] на посилання вашого репозиторію
+    git clone [URL-ВАШОГО-РЕПОЗИТОРІЮ]
+    ```
+
+2.  **Перейдіть до каталогу проєкту:**
+    ```bash
+    # Замініть [my-react-app] на назву вашої папки, якщо вона інша
+    cd [my-react-app]
+    ```
+
+3.  **Встановіть залежності:**
+    ```bash
+    npm install
+    ```
+
+4.  **Запустіть проєкт у режимі розробки:**
+    ```bash
+    npm run dev
+    ```
+
+    Проєкт буде доступний за адресою `http://localhost:5173/` (або іншим портом, вказаним у терміналі).
+
+---
+
+Демо-версія:
+
+
+Ви можете переглянути живу (live) демо-версію проєкту, розгорнуту на Vercel:
+https://homework-47-eight.vercel.app/
